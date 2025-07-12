@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X, Code, Smartphone, Globe, Briefcase, Mail, Zap, Star } from "lucide-react"
+import { Menu, X, Code, Smartphone, Globe, Briefcase, Mail, Zap, ShoppingCart } from "lucide-react"
 import { ThemeToggle } from "@/components/theme-toggle"
 
 const Navigation = () => {
@@ -24,9 +24,11 @@ const Navigation = () => {
     { name: "Home", href: "/", icon: <Globe className="w-4 h-4" /> },
     { name: "About", href: "/about", icon: <Briefcase className="w-4 h-4" /> },
     { name: "Services", href: "/services", icon: <Code className="w-4 h-4" /> },
+    { name: "Products", href: "/prodcuts", icon: <ShoppingCart className="w-4 h-4"/> },
     { name: "Portfolio", href: "/portfolio", icon: <Smartphone className="w-4 h-4" /> },
     { name: "SEO Tool", href: "/seo-tool", icon: <Zap className="w-4 h-4" /> },
     { name: "Contact", href: "/contact", icon: <Mail className="w-4 h-4" /> },
+    
     
   ]
 
