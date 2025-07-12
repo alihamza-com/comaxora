@@ -37,16 +37,15 @@ const quickLinks = [
   { name: "Portfolio", href: "/portfolio" },
   { name: "Free SEO Tool", href: "/seo-tool" },
   { name: "Contact", href: "/contact" },
-  { name: "Privacy Policy", href: "/privacy" },
-  { name: "Terms of Service", href: "/terms" },
+  
 ]
 
 const socialLinks = [
-  { name: "LinkedIn", href: "https://linkedin.com/company/axoraweb", icon: "linkedin" },
-  { name: "Twitter", href: "https://twitter.com/axoraweb", icon: "twitter" },
-  { name: "Facebook", href: "https://facebook.com/axoraweb", icon: "facebook" },
+  { name: "LinkedIn", href: "https://linkedin.com/in/axorawebcompany", icon: "linkedin" },
+
+  { name: "Facebook", href: "https://facebook.com/axorawebsoftwarehouse", icon: "facebook" },
   { name: "Instagram", href: "https://instagram.com/axoraweb", icon: "instagram" },
-  { name: "GitHub", href: "https://github.com/axoraweb", icon: "github" },
+  { name: "GitHub", href: "https://github.com/alihamza-com", icon: "github" },
 ]
 
 const stats = [
@@ -71,17 +70,30 @@ export default function Footer() {
             >
               <Link href="/" className="flex items-center gap-3 mb-6 group">
                 <motion.div
-                  whileHover={{ rotate: 180 }}
-                  transition={{ duration: 0.3 }}
-                  className="w-12 h-12 bg-gradient-to-r from-blue-400 to-purple-400 rounded-xl flex items-center justify-center shadow-lg"
-                >
-                  <Zap className="w-7 h-7 text-white" />
-                </motion.div>
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 0.2, duration: 0.5, type: "spring" }}
+              className="flex items-center justify-center gap-6 mb-8"
+            >
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 20, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+                className="w-24 h-24 bg-dark-500 rounded-full flex items-center justify-center shadow-2xl border border-blue-300 hover:shadow-2xl"
+              >
+                <img
+                  src="/logo.png"
+                  alt="AxoraWeb Logo"
+                  className="w-36 h-36 object-contain drop-shadow-md"
+                />
+              </motion.div>
+
+              
+            </motion.div>
                 <div>
                   <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
                     AxoraWeb
                   </h3>
-                  <p className="text-sm text-gray-300">Premium Solutions</p>
+                  <p className="text-sm text-gray-300">Solutions</p>
                 </div>
               </Link>
 
@@ -93,18 +105,18 @@ export default function Footer() {
               {/* Contact Info */}
               <div className="space-y-3">
                 <a
-                  href="mailto:ali@axoraweb.com"
+                  href="mailto:axoraweb@gmail.com"
                   className="flex items-center gap-3 text-gray-300 hover:text-blue-400 transition-colors group"
                 >
                   <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                  <span>ali@axoraweb.com</span>
+                  <span>axoraweb@gmail.com</span>
                 </a>
                 <a
-                  href="tel:+923001234567"
+                  href="tel:++923245237429"
                   className="flex items-center gap-3 text-gray-300 hover:text-blue-400 transition-colors group"
                 >
                   <Phone className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                  <span>+92 300 123 4567</span>
+                  <span>+923245237429</span>
                 </a>
                 <div className="flex items-center gap-3 text-gray-300">
                   <MapPin className="w-5 h-5" />
@@ -182,7 +194,7 @@ export default function Footer() {
                 </Link>
 
                 <a
-                  href="https://wa.me/923001234567?text=Hi%20AxoraWeb,%20I'm%20interested%20in%20your%20services"
+                  href="https://wa.me/+923245237429?text=Hi%20AxoraWeb,%20I'm%20interested%20in%20your%20services"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block"
@@ -271,7 +283,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-center gap-2 text-white text-sm">
             <Heart className="w-4 h-4 text-red-300" />
-            <span className="font-medium">100% Real. 100% Functional. 100% Production-Ready.</span>
+            <span className="font-medium">100% Real. 100% Functional. 100% Services.</span>
             <Heart className="w-4 h-4 text-red-300" />
           </div>
         </div>

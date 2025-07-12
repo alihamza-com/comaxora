@@ -29,9 +29,9 @@ import Link from "next/link"
 
 const teamMembers = [
   {
-    name: "Ali Hassan",
+    name: "Saad Hussain",
     role: "Founder & Lead Developer",
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/saad.jpg",
     bio: "Full-stack developer with 8+ years of experience in building scalable web applications. Passionate about clean code and innovative solutions.",
     skills: ["React", "Node.js", "Python", "AWS", "DevOps"],
     social: {
@@ -40,9 +40,9 @@ const teamMembers = [
     },
   },
   {
-    name: "Sarah Ahmed",
+    name: "Muhammad Tayyab",
     role: "UI/UX Designer",
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/tayab.png",
     bio: "Creative designer with expertise in user-centered design and modern UI/UX principles. Focused on creating beautiful and functional interfaces.",
     skills: ["Figma", "Adobe XD", "Prototyping", "User Research", "Design Systems"],
     social: {
@@ -50,10 +50,11 @@ const teamMembers = [
       dribbble: "https://dribbble.com/sarahahmed",
     },
   },
+  
   {
-    name: "Muhammad Khan",
+    name: "Rubab Latif",
     role: "Mobile App Developer",
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/rubab.jpeg",
     bio: "Mobile development specialist with expertise in React Native and Flutter. Delivered 50+ mobile apps with excellent user ratings.",
     skills: ["React Native", "Flutter", "iOS", "Android", "Firebase"],
     social: {
@@ -62,9 +63,9 @@ const teamMembers = [
     },
   },
   {
-    name: "Fatima Malik",
+    name: "Alina Malik",
     role: "Digital Marketing Specialist",
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/alina.jpeg",
     bio: "SEO and digital marketing expert with proven track record of improving search rankings and driving organic traffic growth.",
     skills: ["SEO", "Google Ads", "Social Media", "Analytics", "Content Strategy"],
     social: {
@@ -174,7 +175,7 @@ export default function AboutPage() {
                 <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
                   About AxoraWeb
                 </h1>
-                <p className="text-xl text-blue-600 dark:text-blue-400 font-semibold">Premium Solutions</p>
+                <p className="text-xl text-blue-600 dark:text-blue-400 font-semibold">Solutions</p>
               </div>
             </div>
             <p className="text-2xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
@@ -444,19 +445,7 @@ export default function AboutPage() {
                       ))}
                     </div>
 
-                    <div className="flex justify-center gap-3">
-                      {Object.entries(member.social).map(([platform, url]) => (
-                        <a
-                          key={platform}
-                          href={url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="w-8 h-8 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center hover:bg-blue-500 hover:text-white transition-colors duration-300"
-                        >
-                          <Globe className="w-4 h-4" />
-                        </a>
-                      ))}
-                    </div>
+                    
                   </CardContent>
                 </Card>
               </motion.div>
@@ -558,7 +547,7 @@ export default function AboutPage() {
                 </Button>
               </Link>
               <a
-                href="https://wa.me/923001234567?text=Hi%20AxoraWeb,%20I'd%20like%20to%20learn%20more%20about%20your%20team%20and%20services"
+                href="https://wa.me/+923245237429?text=Hi%20AxoraWeb,%20I'd%20like%20to%20learn%20more%20about%20your%20team%20and%20services"
                 target="_blank"
                 rel="noopener noreferrer"
               >

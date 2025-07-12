@@ -47,7 +47,7 @@ const services = [
     ],
     technologies: ["React", "Next.js", "Node.js", "TypeScript", "MongoDB", "PostgreSQL", "Redis", "AWS"],
     color: "from-blue-500 to-cyan-500",
-    price: "Starting at $2,999",
+    price: "Starting at $20",
     timeline: "4-12 weeks",
     projects: "50+ completed",
     rating: 4.9,
@@ -71,7 +71,7 @@ const services = [
     ],
     technologies: ["React Native", "Flutter", "Swift", "Kotlin", "Firebase", "Redux", "SQLite", "Expo"],
     color: "from-purple-500 to-pink-500",
-    price: "Starting at $4,999",
+    price: "Starting at $20",
     timeline: "6-16 weeks",
     projects: "30+ completed",
     rating: 4.8,
@@ -128,7 +128,7 @@ const services = [
       "Screaming Frog",
     ],
     color: "from-orange-500 to-red-500",
-    price: "Starting at $999",
+    price: "Starting at $2099",
     timeline: "2-6 weeks setup",
     projects: "60+ completed",
     rating: 4.7,
@@ -152,7 +152,7 @@ const services = [
     ],
     technologies: ["Python", "Java", "C#", ".NET", "Spring Boot", "Django", "Docker", "Kubernetes"],
     color: "from-indigo-500 to-purple-500",
-    price: "Starting at $5,999",
+    price: "Starting at $20",
     timeline: "8-24 weeks",
     projects: "25+ completed",
     rating: 4.8,
@@ -176,7 +176,7 @@ const services = [
     ],
     technologies: ["AWS", "Azure", "Docker", "Kubernetes", "Terraform", "Jenkins", "GitLab CI", "Prometheus"],
     color: "from-teal-500 to-blue-500",
-    price: "Starting at $1,499",
+    price: "Starting at $20",
     timeline: "2-8 weeks",
     projects: "35+ completed",
     rating: 4.6,
@@ -227,14 +227,14 @@ const processSteps = [
 
 const testimonials = [
   {
-    name: "Sarah Johnson",
+    name: "John Doe",
     company: "TechStart Inc.",
     role: "CEO",
     content:
       "AxoraWeb delivered an exceptional e-commerce platform that increased our sales by 300%. Their attention to detail and technical expertise is unmatched.",
     rating: 5,
     service: "Web Development",
-    image: "/placeholder.svg?height=60&width=60",
+    image: "/aora.jpeg",
   },
   {
     name: "Ahmed Hassan",
@@ -244,7 +244,7 @@ const testimonials = [
       "The mobile app they developed for us has over 100k downloads and 4.8-star rating. Professional team with excellent communication.",
     rating: 5,
     service: "Mobile Development",
-    image: "/placeholder.svg?height=60&width=60",
+    image: "/khan.jpeg",
   },
   {
     name: "Maria Rodriguez",
@@ -254,7 +254,7 @@ const testimonials = [
       "Our website redesign resulted in 250% increase in leads. The SEO optimization has us ranking #1 for our target keywords.",
     rating: 5,
     service: "UI/UX Design",
-    image: "/placeholder.svg?height=60&width=60",
+    image: "/ahmad.jpeg",
   },
 ]
 
@@ -315,7 +315,7 @@ export default function ServicesPage() {
                 <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
                   Our Services
                 </h1>
-                <p className="text-xl text-blue-600 dark:text-blue-400 font-semibold">Premium Solutions</p>
+                <p className="text-xl text-blue-600 dark:text-blue-400 font-semibold">Solutions</p>
               </div>
             </div>
             <p className="text-2xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed mb-8">
@@ -672,7 +672,7 @@ export default function ServicesPage() {
                 </Button>
               </Link>
               <a
-                href="https://wa.me/923001234567?text=Hi%20AxoraWeb,%20I'm%20interested%20in%20your%20services"
+                href="https://wa.me/+923245237429?text=Hi%20AxoraWeb,%20I'm%20interested%20in%20your%20services"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -689,11 +689,11 @@ export default function ServicesPage() {
             <div className="flex items-center justify-center gap-8 text-sm text-white/80">
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4" />
-                <span>ali@axoraweb.com</span>
+                <span>axoraweb@gmail.com</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4" />
-                <span>+92 300 123 4567</span>
+                <span>+923245237429</span>
               </div>
             </div>
           </motion.div>

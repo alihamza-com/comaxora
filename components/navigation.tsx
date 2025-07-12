@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X, Code, Smartphone, Globe, Briefcase, Mail, Zap } from "lucide-react"
+import { Menu, X, Code, Smartphone, Globe, Briefcase, Mail, Zap, Star } from "lucide-react"
 import { ThemeToggle } from "@/components/theme-toggle"
 
 const Navigation = () => {
@@ -27,6 +27,7 @@ const Navigation = () => {
     { name: "Portfolio", href: "/portfolio", icon: <Smartphone className="w-4 h-4" /> },
     { name: "SEO Tool", href: "/seo-tool", icon: <Zap className="w-4 h-4" /> },
     { name: "Contact", href: "/contact", icon: <Mail className="w-4 h-4" /> },
+    
   ]
 
   return (
@@ -38,16 +39,34 @@ const Navigation = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-16 ">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2 group">
-            <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-              <Code className="w-5 h-5 text-white" />
-            </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              AxoraWeb
-            </span>
-          </Link>
+<Link
+  href="/"
+  className="relative w-14 h-14 flex items-center justify-center group"
+>
+  <motion.div
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              // transition={{ delay: 0.2, duration: 0.5, type: "spring" }}
+              className="flex items-center justify-center gap-6 mb-1"
+            >
+              <div
+                // animate={{ rotate: 0 }}
+                // transition={{ duration: 20, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+                className="w-12 h-12 bg-dark-500 rounded-full flex items-center justify-center shadow-2xl border border-blue-300 hover:shadow-2xl"
+              >
+                <img
+                  src="/logo.png"
+                  alt="AxoraWeb Logo"
+                  className="w-36 h-36 object-contain drop-shadow-md"
+                />
+              </div>
+
+              
+            </motion.div>
+</Link>
+
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-1">

@@ -33,16 +33,16 @@ const contactInfo = [
     icon: <Mail className="w-6 h-6" />,
     title: "Email Us",
     description: "Get in touch via email",
-    value: "ali@axoraweb.com",
-    action: "mailto:ali@axoraweb.com",
+    value: "axoraweb@gmail.com",
+    action: "mailto:axoraweb@gmail.com",
     color: "from-blue-500 to-cyan-500",
   },
   {
     icon: <Phone className="w-6 h-6" />,
     title: "Call Us",
     description: "Speak directly with our team",
-    value: "+92 300 123 4567",
-    action: "tel:+923001234567",
+    value: "+923245237429",
+    action: "tel:+923245237429",
     color: "from-green-500 to-emerald-500",
   },
   {
@@ -50,7 +50,7 @@ const contactInfo = [
     title: "WhatsApp",
     description: "Quick chat on WhatsApp",
     value: "Chat Now",
-    action: "https://wa.me/923001234567?text=Hi%20AxoraWeb,%20I'm%20interested%20in%20your%20services",
+    action: "https://wa.me/923245237429?text=Hi%20AxoraWeb,%20I'm%20interested%20in%20your%20services",
     color: "from-green-600 to-green-500",
   },
   {
@@ -365,7 +365,7 @@ export default function ContactPage() {
                             value={formData.phone}
                             onChange={handleInputChange}
                             className="pl-10 h-12 bg-white/50 dark:bg-gray-800/50 border-gray-300 dark:border-gray-600"
-                            placeholder="+92 300 123 4567"
+                            placeholder="+923245237429"
                           />
                         </div>
                       </div>
@@ -555,7 +555,7 @@ export default function ContactPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://wa.me/923001234567?text=Hi%20AxoraWeb,%20I'm%20ready%20to%20start%20my%20project!"
+                href="https://wa.me/+923245237429?text=Hi%20AxoraWeb,%20I'm%20ready%20to%20start%20my%20project!"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -568,7 +568,7 @@ export default function ContactPage() {
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </a>
-              <a href="tel:+923001234567">
+              <a href="tel:++923245237429">
                 <Button
                   size="lg"
                   variant="outline"

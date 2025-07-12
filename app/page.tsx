@@ -29,7 +29,10 @@ import {
   Play,
   Download,
   Heart,
+  Server,
+  Database,
 } from "lucide-react"
+
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -41,7 +44,7 @@ const services = [
     description: "Full-stack web applications with modern frameworks",
     features: ["React/Next.js", "Node.js/Express", "Database Design", "API Development"],
     color: "from-blue-500 to-cyan-500",
-    price: "Starting at $2,999",
+    price: "Starting at $20",
   },
   {
     icon: <Smartphone className="w-8 h-8" />,
@@ -49,7 +52,7 @@ const services = [
     description: "Native and cross-platform mobile applications",
     features: ["React Native", "Flutter", "iOS/Android", "App Store Deployment"],
     color: "from-purple-500 to-pink-500",
-    price: "Starting at $4,999",
+    price: "Starting at $20",
   },
   {
     icon: <Palette className="w-8 h-8" />,
@@ -57,7 +60,7 @@ const services = [
     description: "Beautiful, user-centered design solutions",
     features: ["Figma Design", "Prototyping", "User Research", "Design Systems"],
     color: "from-green-500 to-emerald-500",
-    price: "Starting at $1,999",
+    price: "Starting at $20",
   },
   {
     icon: <Search className="w-8 h-8" />,
@@ -65,7 +68,7 @@ const services = [
     description: "Boost your online presence and rankings",
     features: ["SEO Optimization", "Content Strategy", "Social Media", "Analytics"],
     color: "from-orange-500 to-red-500",
-    price: "Starting at $999",
+    price: "Starting at $20",
   },
   {
     icon: <Code className="w-8 h-8" />,
@@ -73,7 +76,7 @@ const services = [
     description: "Tailored software solutions for your business",
     features: ["Enterprise Apps", "Automation", "Integration", "Maintenance"],
     color: "from-indigo-500 to-purple-500",
-    price: "Starting at $5,999",
+    price: "Starting at $20",
   },
   {
     icon: <Cloud className="w-8 h-8" />,
@@ -81,7 +84,7 @@ const services = [
     description: "Scalable cloud infrastructure and deployment",
     features: ["AWS/Azure", "CI/CD", "Monitoring", "Security"],
     color: "from-teal-500 to-blue-500",
-    price: "Starting at $1,499",
+    price: "Starting at $20",
   },
 ]
 
@@ -93,7 +96,7 @@ const testimonials = [
     content:
       "AxoraWeb delivered an exceptional e-commerce platform that increased our sales by 300%. Their attention to detail and technical expertise is unmatched.",
     rating: 5,
-    image: "/placeholder.svg?height=60&width=60",
+    image: "/sarah.jpeg",
   },
   {
     name: "Ahmed Hassan",
@@ -102,7 +105,7 @@ const testimonials = [
     content:
       "The mobile app they developed for us has over 100k downloads and 4.8-star rating. Professional team with excellent communication throughout the project.",
     rating: 5,
-    image: "/placeholder.svg?height=60&width=60",
+    image: "/ahmad.jpeg",
   },
   {
     name: "Maria Rodriguez",
@@ -111,7 +114,7 @@ const testimonials = [
     content:
       "Our website redesign by AxoraWeb resulted in 250% increase in leads. The SEO optimization they provided has us ranking #1 for our target keywords.",
     rating: 5,
-    image: "/placeholder.svg?height=60&width=60",
+    image: "/aora.jpeg",
   },
 ]
 
@@ -123,21 +126,22 @@ const stats = [
 ]
 
 const technologies = [
-  { name: "React", logo: "/placeholder.svg?height=40&width=40" },
-  { name: "Next.js", logo: "/placeholder.svg?height=40&width=40" },
-  { name: "Node.js", logo: "/placeholder.svg?height=40&width=40" },
-  { name: "TypeScript", logo: "/placeholder.svg?height=40&width=40" },
-  { name: "Python", logo: "/placeholder.svg?height=40&width=40" },
-  { name: "AWS", logo: "/placeholder.svg?height=40&width=40" },
-  { name: "MongoDB", logo: "/placeholder.svg?height=40&width=40" },
-  { name: "PostgreSQL", logo: "/placeholder.svg?height=40&width=40" },
+  { name: "React", icon: <Code /> }, // Symbolizes frontend coding
+  { name: "Next.js", icon: <Zap /> }, // Symbolizes speed / serverless
+  { name: "Node.js", icon: <Server /> }, // Server symbol
+  { name: "TypeScript", icon: <Shield /> }, // Type safety/security
+  { name: "Python", icon: <Brain /> }, // AI/ML and scripting
+  { name: "AWS", icon: <Cloud /> }, // Cloud symbol
+  { name: "MongoDB", icon: <Database /> }, // Database
+  { name: "PostgreSQL", icon: <Rocket /> }, // Powerful open-source DB
 ]
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen ">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-gray-900 dark:via-blue-900/20 dark:to-indigo-900/20">
+      <section className=" relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-gray-900 dark:via-blue-900/20 dark:to-indigo-900/20">
+
         {/* Background Animation */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
@@ -157,22 +161,30 @@ export default function HomePage() {
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ delay: 0.2, duration: 0.5, type: "spring" }}
-              className="flex items-center justify-center gap-4 mb-8"
+              className="flex items-center justify-center gap-6 mb-8"
             >
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 20, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
-                className="w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg"
+                className="w-24 h-24 bg-dark-500 rounded-full flex items-center justify-center shadow-2xl border border-blue-300 hover:shadow-2xl"
               >
-                <Zap className="w-10 h-10 text-white" />
+                <img
+                  src="/logo.png"
+                  alt="AxoraWeb Logo"
+                  className="w-36 h-36 object-contain drop-shadow-md"
+                />
               </motion.div>
+
               <div className="text-left">
-                <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+                <h1 className="text-4xl md:text-6xl font-extrabold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent drop-shadow-md">
                   AxoraWeb
                 </h1>
-                <p className="text-lg text-blue-600 dark:text-blue-400 font-semibold">Premium Solutions</p>
+                <p className="text-xl text-blue-600 dark:text-blue-400 font-semibold">
+                  Solutions
+                </p>
               </div>
             </motion.div>
+
 
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -180,11 +192,11 @@ export default function HomePage() {
               transition={{ delay: 0.4, duration: 0.8 }}
               className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight"
             >
-              Pakistan's Premier{" "}
+              Welcome{" "}
               <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                Full-Stack
+                to Our
               </span>{" "}
-              Software House
+              Digital World
             </motion.h2>
 
             <motion.p
@@ -193,13 +205,14 @@ export default function HomePage() {
               transition={{ delay: 0.6, duration: 0.8 }}
               className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed"
             >
-              We deliver{" "}
-              <span className="font-semibold text-blue-600 dark:text-blue-400">world-class digital solutions</span> with{" "}
+              We craft{" "}
+              <span className="font-semibold text-blue-600 dark:text-blue-400">cutting-edge digital solutions</span> built on{" "}
               <span className="font-semibold text-purple-600 dark:text-purple-400">
-                international quality standards
+                global best practices
               </span>
-              . From web development to mobile apps, we transform your ideas into powerful digital experiences.
+              . Whether it’s web platforms, mobile apps, or custom software, we bring your ideas to life with precision and creativity.
             </motion.p>
+
 
             {/* CTA Buttons */}
             <motion.div
@@ -403,14 +416,10 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
                 whileHover={{ scale: 1.1, y: -5 }}
-                className="flex flex-col items-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group"
+                className="flex flex-col items-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl hover:bg-blue-100 dark:hover:bg-blue-700 transition-all duration-300 group"
               >
-                <img
-                  src={tech.logo || "/placeholder.svg"}
-                  alt={tech.name}
-                  className="w-10 h-10 mb-3 group-hover:scale-110 transition-transform duration-300"
-                />
-                <span className="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                {tech.icon}
+                <span className="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-black-600 dark:group-hover:text-black-400 transition-colors">
                   {tech.name}
                 </span>
               </motion.div>
@@ -595,7 +604,7 @@ export default function HomePage() {
                 </Button>
               </Link>
               <a
-                href="https://wa.me/923001234567?text=Hi%20AxoraWeb,%20I'm%20interested%20in%20your%20services"
+                href="https://wa.me/+923245237429?text=Hi%20AxoraWeb,%20I'm%20interested%20in%20your%20services"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -613,11 +622,11 @@ export default function HomePage() {
             <div className="flex items-center justify-center gap-8 text-sm text-gray-600 dark:text-gray-300">
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4" />
-                <span>ali@axoraweb.com</span>
+                <span>axoraweb@gmail.com</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4" />
-                <span>+92 300 123 4567</span>
+                <span>+923245237429</span>
               </div>
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4" />
@@ -637,21 +646,20 @@ export default function HomePage() {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <div className="flex items-center justify-center gap-2 mb-4">
-              <Heart className="w-5 h-5 text-red-500" />
-              <span className="text-lg font-semibold text-gray-900 dark:text-white">
-                100% Real. 100% Functional. 100% Production-Ready.
-              </span>
-              <Heart className="w-5 h-5 text-red-500" />
-            </div>
-            <p className="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Every feature you see on this website is live and working. No mockups, no fake data, no placeholder
-              content. This is what real professional development looks like - built with international quality
-              standards right here in Pakistan.
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+              AxoraWeb Solutions
+            </h2>
+
+            <p className="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mt-4">
+              Our services include custom website development, e-commerce platforms, AI integrations, real-time apps,
+              and cloud-native solutions — all built with industry best practices and a passion for performance,
+              security, and scalability. With a team of skilled engineers and designers, AxoraWeb delivers
+              100% real, production-ready software — crafted in Pakistan, loved worldwide.
             </p>
           </motion.div>
         </div>
       </section>
+
     </div>
   )
 }

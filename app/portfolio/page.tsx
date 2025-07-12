@@ -1,5 +1,5 @@
 "use client"
-
+import { useState } from "react"
 import { motion } from "framer-motion"
 import Link from "next/link"
 import {
@@ -30,11 +30,11 @@ import { Badge } from "@/components/ui/badge"
 const portfolioProjects = [
   {
     id: 1,
-    title: "E-Commerce Platform",
-    subtitle: "TechMart - Modern Online Store",
+    title: "Occess Co working Platform",
+    subtitle: "A Collaborative Workspace Solution",
     description:
-      "A comprehensive e-commerce platform with advanced features including real-time inventory, payment processing, and analytics dashboard.",
-    image: "/placeholder.svg?height=400&width=600",
+      "A comprehensive co-working platform that enhances productivity and collaboration among remote teams.",
+    image: "/occess.png",
     category: "Web Development",
     technologies: ["React", "Next.js", "Node.js", "MongoDB", "Stripe", "AWS"],
     features: [
@@ -54,7 +54,7 @@ const portfolioProjects = [
     client: "TechStart Inc.",
     timeline: "12 weeks",
     year: "2024",
-    liveUrl: "https://techmart-demo.com",
+    liveUrl: "https://occesscoworking.com/",
     githubUrl: "https://github.com/axoraweb/techmart",
     color: "from-blue-500 to-cyan-500",
   },
@@ -64,7 +64,7 @@ const portfolioProjects = [
     subtitle: "MediCare - Patient Management System",
     description:
       "A comprehensive healthcare mobile application for patient management, appointment scheduling, and telemedicine consultations.",
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/health_care.png",
     category: "Mobile Development",
     technologies: ["React Native", "Firebase", "Node.js", "PostgreSQL", "Socket.io", "AWS"],
     features: [
@@ -94,7 +94,7 @@ const portfolioProjects = [
     subtitle: "FinanceTracker - Investment Platform",
     description:
       "A sophisticated financial dashboard for investment tracking, portfolio management, and real-time market analysis.",
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/financial_tracker.jpg",
     category: "Web Development",
     technologies: ["React", "TypeScript", "Python", "Django", "PostgreSQL", "Redis"],
     features: [
@@ -124,7 +124,7 @@ const portfolioProjects = [
     subtitle: "RestaurantPro - Complete Solution",
     description:
       "An all-in-one restaurant management system with POS, inventory management, staff scheduling, and customer analytics.",
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/restaurant_pro.png",
     category: "Custom Software",
     technologies: ["Vue.js", "Laravel", "MySQL", "Redis", "Pusher", "Stripe"],
     features: [
@@ -154,7 +154,7 @@ const portfolioProjects = [
     subtitle: "EduPlatform - Online Education",
     description:
       "A comprehensive learning management system with course creation, student tracking, and interactive learning tools.",
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/learn_hub.png",
     category: "Web Development",
     technologies: ["React", "Next.js", "Node.js", "MongoDB", "Socket.io", "AWS"],
     features: [
@@ -180,18 +180,18 @@ const portfolioProjects = [
   },
   {
     id: 6,
-    title: "Real Estate Platform",
-    subtitle: "PropertyHub - Property Management",
+    title: "Android Fitness Tracker",
+    subtitle: "HealthTrack - Fitness App",
     description:
-      "A modern real estate platform with property listings, virtual tours, and comprehensive property management tools.",
-    image: "/placeholder.svg?height=400&width=600",
-    category: "Web Development",
-    technologies: ["React", "Next.js", "Python", "FastAPI", "PostgreSQL", "AWS"],
+      "A modern fitness tracking app for Android with real-time health monitoring, workout planning, and progress tracking.",
+    image: "/fit_track.png",
+    category: "Mobile Development",
+    technologies: ["React Native", "Node.js", "MongoDB", "Firebase", "AWS"],
     features: [
-      "Property listings",
-      "Virtual tours",
-      "Advanced search filters",
-      "Mortgage calculator",
+      "Real-time health monitoring",
+      "Workout planning",
+      "Progress tracking",
+      "Nutrition tracking",
       "Agent dashboard",
       "Lead management",
     ],
@@ -209,6 +209,8 @@ const portfolioProjects = [
     color: "from-teal-500 to-blue-500",
   },
 ]
+
+
 
 const categories = [
   { name: "All Projects", count: portfolioProjects.length, icon: <Globe className="w-5 h-5" /> },
@@ -237,6 +239,7 @@ const stats = [
 ]
 
 export default function PortfolioPage() {
+const [activeCategory, setActiveCategory] = useState("All Projects")
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
@@ -302,8 +305,9 @@ export default function PortfolioPage() {
                 whileHover={{ scale: 1.05 }}
               >
                 <Button
-                  variant={index === 0 ? "default" : "outline"}
-                  className={`px-6 py-3 ${index === 0 ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white" : "border-gray-300 dark:border-gray-600"}`}
+                  onClick={() => setActiveCategory(category.name)}
+                  variant={activeCategory === category.name ? "default" : "outline"}
+                  className={`px-6 py-3 ${activeCategory === category.name ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white" : "border-gray-300 dark:border-gray-600"}`}
                 >
                   {category.icon}
                   <span className="ml-2">{category.name}</span>
@@ -311,6 +315,7 @@ export default function PortfolioPage() {
                     {category.count}
                   </Badge>
                 </Button>
+
               </motion.div>
             ))}
           </div>
@@ -318,146 +323,150 @@ export default function PortfolioPage() {
       </section>
 
       {/* Portfolio Grid */}
-      <section className="py-20 px-4 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-800 dark:to-blue-900/20">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12">
-            {portfolioProjects.map((project, index) => (
-              <motion.div
-                key={project.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1, duration: 0.8 }}
-                whileHover={{ y: -5 }}
-                className="group"
-              >
-                <Card className="h-full overflow-hidden bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm border-white/30 hover:shadow-2xl transition-all duration-500">
-                  {/* Project Image */}
-                  <div className="relative overflow-hidden">
-                    <img
-                      src={project.image || "/placeholder.svg"}
-                      alt={project.title}
-                      className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div className="absolute top-4 left-4">
-                      <Badge className={`bg-gradient-to-r ${project.color} text-white border-none`}>
-                        {project.category}
-                      </Badge>
-                    </div>
-                    <div className="absolute top-4 right-4">
-                      <Badge variant="outline" className="bg-white/90 text-gray-900 border-white">
-                        {project.year}
-                      </Badge>
-                    </div>
-                    <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <div className="flex gap-2">
-                        <a
-                          href={project.liveUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="w-10 h-10 bg-white/90 rounded-full flex items-center justify-center hover:bg-white transition-colors"
-                        >
-                          <ExternalLink className="w-5 h-5 text-gray-900" />
-                        </a>
-                        <a
-                          href={project.githubUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="w-10 h-10 bg-white/90 rounded-full flex items-center justify-center hover:bg-white transition-colors"
-                        >
-                          <Github className="w-5 h-5 text-gray-900" />
-                        </a>
-                      </div>
-                    </div>
+      {/* Portfolio Grid */}
+<section className="py-20 px-4 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-800 dark:to-blue-900/20">
+  <div className="max-w-7xl mx-auto">
+    <div className="grid lg:grid-cols-2 gap-12">
+      {portfolioProjects
+        .filter(
+          (project) =>
+            activeCategory === "All Projects" || project.category === activeCategory
+        )
+        .map((project, index) => (
+          <motion.div
+            key={project.id}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.1, duration: 0.8 }}
+            whileHover={{ y: -5 }}
+            className="group"
+          >
+            <Card className="h-full overflow-hidden bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm border-white/30 hover:shadow-2xl transition-all duration-500">
+              {/* Project Image */}
+              <div className="relative overflow-hidden">
+                <img
+                  src={project.image || "/placeholder.svg"}
+                  alt={project.title}
+                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute top-4 left-4">
+                  <Badge className={`bg-gradient-to-r ${project.color} text-white border-none`}>
+                    {project.category}
+                  </Badge>
+                </div>
+                <div className="absolute top-4 right-4">
+                  <Badge variant="outline" className="bg-white/90 text-gray-900 border-white">
+                    {project.year}
+                  </Badge>
+                </div>
+              </div>
+
+              <CardContent className="p-8">
+                <div className="mb-6">
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                    {project.title}
+                  </h3>
+                  <p className="text-lg text-blue-600 dark:text-blue-400 font-medium mb-3">
+                    {project.subtitle}
+                  </p>
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                    {project.description}
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-2 gap-4 mb-6">
+                  <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300">
+                    <Users className="w-4 h-4" />
+                    <span>{project.client}</span>
                   </div>
+                  <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300">
+                    <Calendar className="w-4 h-4" />
+                    <span>{project.timeline}</span>
+                  </div>
+                </div>
 
-                  <CardContent className="p-8">
-                    {/* Project Header */}
-                    <div className="mb-6">
-                      <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{project.title}</h3>
-                      <p className="text-lg text-blue-600 dark:text-blue-400 font-medium mb-3">{project.subtitle}</p>
-                      <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{project.description}</p>
-                    </div>
+                <div className="mb-6">
+                  <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">Technologies Used</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {project.technologies.map((tech, techIndex) => (
+                      <Badge key={techIndex} variant="outline" className="text-xs">
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
 
-                    {/* Project Details */}
-                    <div className="grid grid-cols-2 gap-4 mb-6">
-                      <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300">
-                        <Users className="w-4 h-4" />
-                        <span>{project.client}</span>
+                <div className="mb-6">
+                  <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">Key Features</h4>
+                  <div className="grid grid-cols-1 gap-2">
+                    {project.features.slice(0, 4).map((feature, featureIndex) => (
+                      <div
+                        key={featureIndex}
+                        className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300"
+                      >
+                        <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
+                        <span>{feature}</span>
                       </div>
-                      <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300">
-                        <Calendar className="w-4 h-4" />
-                        <span>{project.timeline}</span>
-                      </div>
-                    </div>
+                    ))}
+                  </div>
+                </div>
 
-                    {/* Technologies */}
-                    <div className="mb-6">
-                      <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">Technologies Used</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {project.technologies.map((tech, techIndex) => (
-                          <Badge key={techIndex} variant="outline" className="text-xs">
-                            {tech}
-                          </Badge>
-                        ))}
+                <div className="mb-6">
+                  <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">Project Results</h4>
+                  <div className="grid grid-cols-2 gap-3">
+                    {Object.entries(project.results).map(([key, value], resultIndex) => (
+                      <div
+                        key={resultIndex}
+                        className="text-center p-3 bg-gray-50 dark:bg-gray-800 rounded-lg"
+                      >
+                        <div className="text-lg font-bold text-gray-900 dark:text-white">{value}</div>
+                        <div className="text-xs text-gray-600 dark:text-gray-300 capitalize">
+                          {key.replace(/([A-Z])/g, " $1").trim()}
+                        </div>
                       </div>
-                    </div>
+                    ))}
+                  </div>
+                </div>
 
-                    {/* Key Features */}
-                    <div className="mb-6">
-                      <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">Key Features</h4>
-                      <div className="grid grid-cols-1 gap-2">
-                        {project.features.slice(0, 4).map((feature, featureIndex) => (
-                          <div
-                            key={featureIndex}
-                            className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300"
-                          >
-                            <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                            <span>{feature}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
+                {/* Action Buttons */}
+                <div className="flex gap-3">
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1"
+                  >
+                    <Button
+                      className={`w-full bg-gradient-to-r ${project.color} text-white hover:shadow-lg transition-all duration-300 group`}
+                    >
+                      <Eye className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
+                      View Live
+                      <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                    </Button>
+                  </a>
 
-                    {/* Results */}
-                    <div className="mb-6">
-                      <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">Project Results</h4>
-                      <div className="grid grid-cols-2 gap-3">
-                        {Object.entries(project.results).map(([key, value], resultIndex) => (
-                          <div key={resultIndex} className="text-center p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
-                            <div className="text-lg font-bold text-gray-900 dark:text-white">{value}</div>
-                            <div className="text-xs text-gray-600 dark:text-gray-300 capitalize">
-                              {key.replace(/([A-Z])/g, " $1").trim()}
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
+                  {/* Optional GitHub button */}
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1"
+                  >
+                    <Button variant="outline" className="w-full">
+                      <Github className="w-4 h-4 mr-2" />
+                      View Code
+                    </Button>
+                  </a>
+                </div>
+              </CardContent>
+            </Card>
+          </motion.div>
+        ))}
+    </div>
+  </div>
+</section>
 
-                    {/* Action Buttons */}
-                    <div className="flex gap-3">
-                      <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="flex-1">
-                        <Button
-                          className={`w-full bg-gradient-to-r ${project.color} text-white hover:shadow-lg transition-all duration-300 group`}
-                        >
-                          <Eye className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
-                          View Live
-                          <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                        </Button>
-                      </a>
-                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                        <Button variant="outline" className="px-4 border-gray-300 dark:border-gray-600 bg-transparent">
-                          <Github className="w-4 h-4" />
-                        </Button>
-                      </a>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Process Showcase */}
       <section className="py-20 px-4 bg-white dark:bg-gray-900">
@@ -547,13 +556,13 @@ export default function PortfolioPage() {
             </blockquote>
             <div className="flex items-center justify-center gap-4">
               <img
-                src="/placeholder.svg?height=60&width=60"
+                src="/ali.jpeg"
                 alt="Client"
                 className="w-15 h-15 rounded-full object-cover border-4 border-white/30"
               />
               <div className="text-left">
-                <div className="text-xl font-semibold text-white">Sarah Johnson</div>
-                <div className="text-white/80">CEO, TechStart Inc.</div>
+                <div className="text-xl font-semibold text-white">Ali Hamza</div>
+                <div className="text-white/80">Owner of AxoraWeb</div>
               </div>
             </div>
           </motion.div>
@@ -590,7 +599,7 @@ export default function PortfolioPage() {
                 </Button>
               </Link>
               <a
-                href="https://wa.me/923001234567?text=Hi%20AxoraWeb,%20I%20saw%20your%20portfolio%20and%20I'm%20interested%20in%20working%20with%20you"
+                href="https://wa.me/+923245237429?text=Hi%20AxoraWeb,%20I%20saw%20your%20portfolio%20and%20I'm%20interested%20in%20working%20with%20you"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -607,11 +616,11 @@ export default function PortfolioPage() {
             <div className="flex items-center justify-center gap-8 text-sm text-gray-600 dark:text-gray-300">
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4" />
-                <span>ali@axoraweb.com</span>
+                <span>axoraweb@gmail.com</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4" />
-                <span>+92 300 123 4567</span>
+                <span>+923245237429</span>
               </div>
             </div>
           </motion.div>
