@@ -80,7 +80,7 @@ const portfolioProjects = [
     client: "GrowthLab Agency",
     timeline: "3 weeks",
     year: "2026",
-    liveUrl: "https://axoraweb-portfolio.vercel.app/",
+    liveUrl: "https://axoraweb-digital.vercel.app/",
     githubUrl: "https://github.com/axoraweb/techmart",
     color: "from-green-500 to-emerald-500",
   },
