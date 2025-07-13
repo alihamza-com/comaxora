@@ -24,8 +24,8 @@ const Navigation = () => {
     { name: "Home", href: "/", icon: <Globe className="w-4 h-4" /> },
     { name: "About", href: "/about", icon: <Briefcase className="w-4 h-4" /> },
     { name: "Services", href: "/services", icon: <Code className="w-4 h-4" /> },
-    { name: "Products", href: "/prodcuts", icon: <ShoppingCart className="w-4 h-4"/> },
-    { name: "Portfolio", href: "/portfolio", icon: <Smartphone className="w-4 h-4" /> },
+    { name: "Products", href: "/products", icon: <ShoppingCart className="w-4 h-4"/> },
+    
     { name: "SEO Tool", href: "/seo-tool", icon: <Zap className="w-4 h-4" /> },
     { name: "Contact", href: "/contact", icon: <Mail className="w-4 h-4" /> },
     

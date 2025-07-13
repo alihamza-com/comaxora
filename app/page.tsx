@@ -233,14 +233,14 @@ export default function HomePage() {
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
-              <Link href="/seo-tool">
+              <Link href="/products">
                 <Button
                   size="lg"
                   variant="outline"
                   className="px-8 py-4 bg-white/20 dark:bg-gray-800/20 backdrop-blur-sm border-white/30 hover:bg-white/30 dark:hover:bg-gray-800/30 transition-all duration-300 group"
                 >
                   <Rocket className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-                  Free SEO Tool
+                  See Our Products 
                   <Sparkles className="w-5 h-5 ml-2 group-hover:rotate-12 transition-transform" />
                 </Button>
               </Link>

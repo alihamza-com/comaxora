@@ -318,9 +318,9 @@ const [activeCategory, setActiveCategory] = useState("All Projects")
 
       {/* Portfolio Grid */}
       {/* Portfolio Grid */}
-<section className="py-20 px-4 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-800 dark:to-blue-900/20">
+<section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-800 dark:to-blue-900/20">
   <div className="max-w-7xl mx-auto">
-    <div className="grid lg:grid-cols-2 gap-12">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
       {portfolioProjects
         .filter(
           (project) =>
@@ -341,7 +341,7 @@ const [activeCategory, setActiveCategory] = useState("All Projects")
                 <img
                   src={project.image || "/placeholder.svg"}
                   alt={project.title}
-                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-48 sm:h-56 md:h-64 object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="absolute top-4 left-4">
@@ -356,15 +356,15 @@ const [activeCategory, setActiveCategory] = useState("All Projects")
                 </div>
               </div>
 
-              <CardContent className="p-8">
+              <CardContent className="p-6 sm:p-8">
                 <div className="mb-6">
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-2">
                     {project.title}
                   </h3>
-                  <p className="text-lg text-blue-600 dark:text-blue-400 font-medium mb-3">
+                  <p className="text-base text-blue-600 dark:text-blue-400 font-medium mb-3">
                     {project.subtitle}
                   </p>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                  <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
                     {project.description}
                   </p>
                 </div>
@@ -424,7 +424,7 @@ const [activeCategory, setActiveCategory] = useState("All Projects")
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex gap-3">
+                <div className="flex flex-col sm:flex-row gap-3">
                   <a
                     href={project.liveUrl}
                     target="_blank"
@@ -439,19 +439,7 @@ const [activeCategory, setActiveCategory] = useState("All Projects")
                       <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                     </Button>
                   </a>
-
-                  {/* Optional GitHub button */}
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1"
-                  >
-                    <Button variant="outline" className="w-full">
-                      <Github className="w-4 h-4 mr-2" />
-                      View Code
-                    </Button>
-                  </a>
+                  
                 </div>
               </CardContent>
             </Card>
@@ -460,6 +448,7 @@ const [activeCategory, setActiveCategory] = useState("All Projects")
     </div>
   </div>
 </section>
+
 
 
       {/* Process Showcase */}

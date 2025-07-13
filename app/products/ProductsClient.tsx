@@ -84,6 +84,63 @@ const portfolioProjects = [
     githubUrl: "https://github.com/axoraweb/techmart",
     color: "from-green-500 to-emerald-500",
   },
+  {
+  id: 3,
+  title: "Fully Functional ERP Software",
+  description:
+    "Note: For Fully visit contact us : A robust and scalable ERP solution designed for growing businesses. This platform streamlines operations across sales, inventory, HR, and finance with an intuitive UI and powerful backend integration.",
+  image: "/erp1.png",
+  category: "Softwares",
+  technologies: ["Next.js", "Tailwind CSS", "Node.js", "MySQL Database", "Hosted on Vercel"],
+  features: [
+    "User Authentication and Role Management",
+    "Sales and Inventory Dashboard",
+    "Customer and Employee Management",
+    "Financial Reports and Analytics",
+    "Responsive UI for All Devices"
+  ],
+  results: {
+    price: "$50",
+    discount: "$5",
+    duration: "Lifetime Access",
+    status: "Available",
+  },
+  client: "GrowthLab Agency",
+  timeline: "3 weeks",
+  year: "2026",
+  liveUrl: "https://erpsoftware.vercel.app/",
+  githubUrl: "https://github.com/axoraweb/techmart",
+  color: "from-green-500 to-emerald-500",
+},
+{
+  id: 4,
+  title: "Digital Web Solutions Template",
+  description:
+    "A modern, high-converting digital agency website template tailored for marketing firms, creative studios, and service providers. Includes case studies, service listings, and customer testimonials to showcase expertise.",
+  image: "/digital.png",
+  category: "Softwares",
+  technologies: ["Next.js", "Tailwind CSS", "Hosted on Vercel"],
+  features: [
+    "Service Listing Pages",
+    "Client Testimonials Carousel",
+    "CTA-driven Landing Sections",
+    "SEO-Optimized Layout",
+    "Smooth Scroll Animations"
+  ],
+  results: {
+    price: "$50",
+    discount: "$5",
+    duration: "Lifetime Access",
+    status: "Available",
+  },
+  client: "GrowthLab Agency",
+  timeline: "3 weeks",
+  year: "2026",
+  liveUrl: "https://digitalsolution-two.vercel.app/",
+  githubUrl: "https://github.com/axoraweb/techmart",
+  color: "from-green-500 to-emerald-500",
+},
+
 ]
 
 
