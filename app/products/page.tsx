@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     title: "Our Products | AxoraWeb Solutions",
     description:
       "Browse and experience high-quality digital products by AxoraWeb. Built for modern businesses.",
-    images: ["https://axorawebsolution.vercel.app/og-products.png"],
+    images: ["https://axorawebsolution.vercel.app/products.png"],
   },
   alternates: {
     canonical: "https://axorawebsolution.vercel.app/products",

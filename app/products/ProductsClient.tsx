@@ -100,8 +100,8 @@ const portfolioProjects = [
     "Responsive UI for All Devices"
   ],
   results: {
-    price: "$50",
-    discount: "$5",
+    price: "$120",
+    discount: "$20",
     duration: "Lifetime Access",
     status: "Available",
   },
@@ -128,8 +128,8 @@ const portfolioProjects = [
     "Smooth Scroll Animations"
   ],
   results: {
-    price: "$50",
-    discount: "$5",
+    price: "$70",
+    discount: "$15",
     duration: "Lifetime Access",
     status: "Available",
   },
