@@ -89,7 +89,7 @@ const portfolioProjects = [
   title: "Fully Functional ERP Software",
   description:
     "Note: For Fully visit contact us : A robust and scalable ERP solution designed for growing businesses. This platform streamlines operations across sales, inventory, HR, and finance with an intuitive UI and powerful backend integration.",
-  image: "/erp1.png",
+  image: "/erp2.png",
   category: "Softwares",
   technologies: ["Next.js", "Tailwind CSS", "Node.js", "MySQL Database", "Hosted on Vercel"],
   features: [
@@ -114,11 +114,50 @@ const portfolioProjects = [
 },
 {
   id: 4,
+  title: "SmartSchool 360 – School Management System",
+  description:
+    "Note: For full demo, please contact us. SmartSchool 360 is an advanced, modular, and installable school ERP platform built for modern institutions. It covers academics, communication, fees, attendance, real-time chat, and more — all with role-based access and offline-first capabilities.",
+  image: "/smartschool360.png",
+  category: "Softwares",
+  technologies: [
+    "Next.js", 
+    "Tailwind CSS", 
+    "Node.js", 
+    "MongoDB", 
+    "Framer Motion", 
+    "install Ready"
+  ],
+  features: [
+    "User Authentication with Role-Based Access (Admin, Teacher, Parent, Student)",
+    "Academic Module: Classes, Subjects, Exams, Timetable",
+    "Finance Module: Fees, Invoices, Reports",
+    "Attendance Tracking and Notifications",
+    "Private Real-Time Chat (Student ↔ Teacher ↔ Admin)",
+    "Installable as Desktop App (PWA) and works Offline",
+    "Responsive and Animated UI for Web and Mobile",
+    "Data Backup and Export/Import Options"
+  ],
+  results: {
+    price: "$170",
+    discount: "$30",
+    duration: "Lifetime Access",
+    status: "Available",
+  },
+  client: "AxoraWeb Solutions",
+  timeline: "4 weeks",
+  year: "2026",
+  liveUrl: "https://axorawebschool.vercel.app/dashboard",
+  githubUrl: "https://github.com/axoraweb/smartschool360",
+  color: "from-blue-600 to-indigo-600",
+}
+,
+{
+  id: 5,
   title: "Digital Web Solutions Template",
   description:
     "A modern, high-converting digital agency website template tailored for marketing firms, creative studios, and service providers. Includes case studies, service listings, and customer testimonials to showcase expertise.",
   image: "/digital.png",
-  category: "Softwares",
+  category: "Custom Templates",
   technologies: ["Next.js", "Tailwind CSS", "Hosted on Vercel"],
   features: [
     "Service Listing Pages",

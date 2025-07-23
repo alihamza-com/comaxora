@@ -34,6 +34,7 @@ const services = [
 
 const quickLinks = [
   { name: "About Us", href: "/about" },
+  { name: "Products", href: "/products" },
   { name: "Portfolio", href: "/portfolio" },
   { name: "Free SEO Tool", href: "/seo-tool" },
   { name: "Contact", href: "/contact" },
@@ -283,7 +284,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-center gap-2 text-white text-sm">
             <Heart className="w-4 h-4 text-red-300" />
-            <span className="font-medium">100% Real. 100% Functional. 100% Services.</span>
+            <span className="font-medium">100% Real. 100% Authentic Services.</span>
             <Heart className="w-4 h-4 text-red-300" />
           </div>
         </div>

@@ -1360,7 +1360,7 @@ This comprehensive SEO analysis was performed by AxoraWeb's AI-powered SEO Code 
                               </Button>
                             </a>
                             <a
-                              href={`mailto:ali@axoraweb.com?subject=SEO Implementation Help for ${projectInfo.businessName}&body=Hi, I used your SEO Code Generator and would like help implementing the SEO code for ${projectInfo.websiteUrl}.`}
+                              href={`mailto:axoraweb@gmail.com?subject=SEO Implementation Help for ${projectInfo.businessName}&body=Hi, I used your SEO Code Generator and would like help implementing the SEO code for ${projectInfo.websiteUrl}.`}
                             >
                               <Button
                                 variant="outline"
@@ -1455,7 +1455,7 @@ This comprehensive SEO analysis was performed by AxoraWeb's AI-powered SEO Code 
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
               <a
-                href="https://wa.me/923001234567?text=Hi%20AxoraWeb,%20I'm%20interested%20in%20your%20professional%20SEO%20services"
+                href="https://wa.me/+923245237429?text=Hi%20AxoraWeb,%20I'm%20interested%20in%20your%20professional%20SEO%20services"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -1472,11 +1472,11 @@ This comprehensive SEO analysis was performed by AxoraWeb's AI-powered SEO Code 
             <div className="flex items-center justify-center gap-8 text-sm text-white/80">
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4" />
-                <span>ali@axoraweb.com</span>
+                <span>axoraweb@gmail.com</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4" />
-                <span>+92 300 123 4567</span>
+                <span>+92 3245237429</span>
               </div>
             </div>
           </motion.div>
